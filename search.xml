@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>[经验]Ubuntu Linux 魔改手册</title>
+      <link href="/post/better-ubuntu-linux/"/>
+      <url>/post/better-ubuntu-linux/</url>
+      
+        <content type="html"><![CDATA[<div class="note info">            <p>因为个人审美的不同，<br>我对于 Ubuntu Linux 的现状并不是很满意，<br>所以我决定把看不顺眼的地方 统 统 改 掉！<br>这是我的个人经验，希望有用。</p>          </div><h2 id="linux-主题"><a class="markdownIt-Anchor" href="#linux-主题"></a> Linux 主题</h2><p>虽然 Ubuntu 本身的主题也不错，<br>但是我更喜欢 <strong>flat-remix</strong> 主题，<br><s>虽然这个主题有点卡，但它就是香</s>。</p><p>我所安装的主题包含以下三个：</p><ol><li><a href="https://drasite.com/flat-remix" target="_blank" rel="noopener">Flat Remix ICON theme</a></li><li><a href="https://drasite.com/flat-remix-gnome" target="_blank" rel="noopener">Flat Remix GNOME theme</a></li><li><a href="https://drasite.com/flat-remix-gtk" target="_blank" rel="noopener">Flat Remix GTK theme</a></li></ol><h3 id="安装-gnome"><a class="markdownIt-Anchor" href="#安装-gnome"></a> 安装 gnome</h3><p>这款主题是需要 <a href="https://www.gnome.org/" target="_blank" rel="noopener">gnome</a> 桌面环境支持的，<br>可以运行以下命令安装：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install gnome</span></pre></td></tr></table></figure><p>接下来等就完事儿了，但是有个缺点，<br>这会安装一系列娱乐软件<s>游戏</s>。<br>运行以下命令卸载它们：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt remove gnome-games</span></pre></td></tr></table></figure><p>接着检查一下有没有没卸干净的，手动卸载。</p><h3 id="安装主题"><a class="markdownIt-Anchor" href="#安装主题"></a> 安装主题</h3><p>首先是<a href="https://drasite.com/flat-remix" target="_blank" rel="noopener">Flat Remix ICON</a>：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:daniruiz/flat-remix</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get update</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get install flat-remix</span></pre></td></tr></table></figure><p>接着是<a href="https://drasite.com/flat-remix-gtk" target="_blank" rel="noopener">Flat Remix GTK</a>:</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:daniruiz/flat-remix</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get update</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get install flat-remix-gtk</span></pre></td></tr></table></figure><p>最后是<a href="https://drasite.com/flat-remix-gnome" target="_blank" rel="noopener">Flat Remix Gnome</a>：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:daniruiz/flat-remix</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get update</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get install flat-remix-gnome</span></pre></td></tr></table></figure><p>然后就完成了安装。</p><h3 id="应用主题"><a class="markdownIt-Anchor" href="#应用主题"></a> 应用主题</h3><h4 id="系统主题"><a class="markdownIt-Anchor" href="#系统主题"></a> 系统主题</h4><p>首先，你需要打开 GNOME Tweaks 。<br>并打开<strong>扩展</strong>选项。（此图片已使用主题）<br><strong>注：若无法开启请重启 Ubuntu Linux</strong></p><p><img alt="gnome-tweak" data-src="https://s2.ax1x.com/2019/12/21/QvoNbq.png" class="lazyload"></p><p>接着打开 User themes 的插件</p><p><strong>注：若无法开启请重启 Ubuntu Linux</strong></p><p><img alt="gnome-tweak-option" data-src="https://s2.ax1x.com/2019/12/21/Qvb9Qe.png" class="lazyload"></p><p>之后在<strong>外观</strong>中选择你喜欢的主题<br>比如向我这样：</p><p><img alt="gnome-tweak-exterior" data-src="https://s2.ax1x.com/2019/12/21/QvbJYV.png" class="lazyload"></p><h4 id="登录主题"><a class="markdownIt-Anchor" href="#登录主题"></a> 登录主题</h4><p><strong>注意！</strong><br>请确保你能够在失败的情况下重新安装 gnome-shell / gdm。</p><p>首先你需要安装 imagemagick 和 glib-compile-resources ：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install libglib2.0-dev-bin imagemagick</span></pre></td></tr></table></figure><p>接着运行以下命令：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https：// github.com / daniruiz / flat-remix-gnome</span></pre></td></tr></table></figure><p>然后选择好你的锁屏壁纸，<br>运行以下命令：</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> flat-remix-gnome</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo make &amp;&amp; sudo make install</span></pre></td></tr></table></figure><p>每次重新选择壁纸后都要重新应用，<br>即重新运行以上命令。</p><h3 id="显示主题"><a class="markdownIt-Anchor" href="#显示主题"></a> 显示主题</h3><p>如果你有主题没有应用成功，<br>那么清重启 Ubuntu Linux。</p><p>并在开机时的登录界面上寻找“齿轮”，<br>它一般位于确认按钮的旁边。<br>接下来选择你想要的主体就好了。<br>这里给出官方图片的展示：</p><p><img alt="login screen theme selector" data-src="https://drasite.com/img/gdm-session-selector.jpg" class="lazyload"></p><h2 id="参考与引用"><a class="markdownIt-Anchor" href="#参考与引用"></a> 参考与引用</h2><ul><li><a href="https://drasite.com/flat-remix-gnome" target="_blank" rel="noopener">Flat Remix GNOME theme</a></li><li><a href="https://drasite.com/flat-remix-gtk" target="_blank" rel="noopener">Flat Remix GTK theme</a></li><li><a href="https://drasite.com/flat-remix" target="_blank" rel="noopener">Flat Remix ICON theme</a></li></ul><div class="note default no-icon">            <h2 id="内容修改与更新"><a class="markdownIt-Anchor" href="#内容修改与更新"></a> 内容修改与更新</h2><p><strong>2019-12-21</strong> 添加了关于 Flat-Remix 主题的应用。</p>          </div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[笔记]血泪教训集</title>
       <link href="/post/mistake/"/>
       <url>/post/mistake/</url>
